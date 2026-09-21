@@ -311,6 +311,14 @@ def juice_chocolate():
                       ice=True, straw="#d6453d", lid=True, garnish=top))
 
 
+
+def juice_lemon():
+    return (tile("#fffbe6", "#f6f0b8") +
+            glass_cup(cx=196, top=104, bottom=240, liquid="#e8d24a", liquid_top=130,
+                      ice=True, straw="#c9a11c", lid=True,
+                      garnish=lemon_slice(292, 214, 32, 8, "#e8c93a", "#fdf6c2") + mint(318, 258, 22)))
+
+
 # --------------------------------------------------------------- ফাস্টফুড
 def ff_beef_burger():
     burger = (
@@ -378,6 +386,7 @@ ITEMS = [
     ("juice_orange.svg", juice_orange),
     ("juice_pineapple.svg", juice_pineapple),
     ("juice_watermelon.svg", juice_watermelon),
+    ("juice_lemon.svg", juice_lemon),
     ("juice_bel.svg", juice_bel),
     ("juice_lassi.svg", juice_lassi),
     ("juice_banana.svg", juice_banana),
