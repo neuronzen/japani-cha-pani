@@ -21,3 +21,8 @@ __pycache__/
 # সিস্টেম/অস্থায়ী ফাইল
 .sudo_as_admin_successful
 .fonts/
+
+# সিস্টেম/ব্রাউজার ডেটা (রিপোতে যাবে না)
+.local/
+.cache/
+.config/
