@@ -1,0 +1,23 @@
+# ---- GitHub-এ যেসব ফাইল যাবে না ----
+
+# ছবির মূল ফাইল (বড়, শুধু এডিট করার জন্য দরকার) — সাইটে ব্যবহৃত হয় না
+assets/raw/
+
+# অপারেটিং সিস্টেম / এডিটরের ফাইল
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+.idea/
+.vscode/
+
+# টেম্পোরারি
+*.log
+*.tmp
+__pycache__/
+.cache/
+
+# সিস্টেম/অস্থায়ী ফাইল
+.sudo_as_admin_successful
+.fonts/

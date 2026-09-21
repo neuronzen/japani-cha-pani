@@ -1,0 +1,41 @@
+# GitHub Pages — স্বয়ংক্রিয় ডিপ্লয়
+# main ব্রাঞ্চে পুশ করলেই সাইট লাইভ হয়ে যাবে।
+# চালু করতে: GitHub রিপো → Settings → Pages → Source = "GitHub Actions"
+
+name: Deploy website to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: রিপো চেকআউট
+        uses: actions/checkout@v4
+
+      - name: Pages সেটআপ
+        uses: actions/configure-pages@v5
+
+      - name: সাইট আপলোড
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .          # index.html যেখানে আছে (রিপোর রুট)
+
+      - name: ডিপ্লয়
+        id: deployment
+        uses: actions/deploy-pages@v4
